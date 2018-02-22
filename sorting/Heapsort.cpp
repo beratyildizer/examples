@@ -31,7 +31,10 @@ void heapsort(std::vector<int>& input)
 
     for (int i = input.size() - 1; i >= 0; -- i)
     {
+        // Move max to reduced end.
         std::swap(input[0], input[i]);
+
+        // Sort with reduced heap.
         max_heapify(input, i, 0);
     }
 }
