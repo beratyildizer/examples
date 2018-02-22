@@ -24,15 +24,15 @@ void heapsort(std::vector<int>& input)
 {
     // Normally we could simply use std::make_heap and std::sort_heap.
 
-    for (size_t i = input.size() / 2; i > 0; --i)
+    for (int i = (input.size() / 2) - 1; i >= 0; --i)
     {
-        max_heapify(input, input.size(), i - 1);
+        max_heapify(input, input.size(), i);
     }
 
-    for (size_t i = input.size(); i > 0; -- i)
+    for (int i = input.size() - 1; i >= 0; -- i)
     {
-        std::swap(input[0], input[i - 1]);
-        max_heapify(input, i - 1, 0);
+        std::swap(input[0], input[i]);
+        max_heapify(input, i, 0);
     }
 }
 
